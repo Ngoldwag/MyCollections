@@ -3,8 +3,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Ledger {
-    int totalSales;
-    Double totalValue;
+    Double totalValue=0.0;
+    double averageSales;
     public List<Double> sale = new ArrayList<Double>();
     double maxSales = 100.00;
 
@@ -36,34 +36,22 @@ public class Ledger {
     }
         public List<Double> addSale(double d){
             sale.add(d);
-            return sale;
-        }
+            totalValue+=d;
+            return sale; }
 
-        public  double getNumberOfSales() {
-            for(int i=0;i<sale.size();i++){
-                this.totalValue+=sale.get(i);
-            }
-            return totalValue;
-        }
-        public  int getTotalSales() {
-            totalSales= sale.size()+1;
-            return totalSales;
-
-        }
-
+        public  int getNumberOfSales() { return sale.size();}
+        public double getTotalSales() { return totalValue; }
         public  double getAverageSale(double total) {
-            return total/(sale.size()+1);
-
-        }
+                averageSales= total/getTotalSales();
+            return averageSales; }
 
         public  int getCountAbove() {
             int count=0;
         for(int i=0;i<sale.size();i++){
         if(sale.get(i)>maxSales){
             count++;
-        }
-    }
-    return count;
+        }}
+        return count;
         }
 
 }

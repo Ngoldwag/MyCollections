@@ -20,17 +20,21 @@ public class ReadFromFile {
         List<String> arrayAsList = new ArrayList<String>();
         String arrayOfWords[];
         arrayAsList = Arrays.asList(str);
-        for(String s: arrayAsList){
-            System.out.println(s);
+        System.out.println(arrayAsList);
+        for(int i=0;i<arrayAsList.size();i++){
+            System.out.println("index " +i + " is " +arrayAsList.get(i));
         }
         //this loops thru each index and creates
         //and array of words for each sentence
         for(int i=0;i<str.length;i++) {
-
-            for (int j = 0; j < str[i].length(); j++) {
-                arrayOfWords = str[i].split(" ");
-                System.out.println("index " + j + "is " + arrayOfWords[j]);
+             arrayOfWords = str[i].split(" ");
+                List<String> al = new ArrayList<String>();
+                al = Arrays.asList(arrayOfWords);
+                for(String s: al){
+                    System.out.println(s);
             }
-            System.out.println(str[i]);
+            //System.out.println(str[i]);
         }
-}}
+
+    }}
+

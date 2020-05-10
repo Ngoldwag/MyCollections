@@ -18,7 +18,7 @@ public class Ledger {
         sales.addSale(2.34);
         sales.addSale(3.45);
         sales.addSale(12.34);
-        sales.addSale(23.45);
+        sales.addSale(234.5);
         sales.addSale(123.45);
         int numOfSales = (int) sales.getNumberOfSales();
         double totalVal = sales.getTotalSales();

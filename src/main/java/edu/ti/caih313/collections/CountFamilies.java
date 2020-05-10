@@ -13,21 +13,22 @@ public class CountFamilies {
         Double familyIncome=keyboard.nextDouble();
         while (familyIncome>0){
             income.add(familyIncome);
-        }
         if(familyIncome>maxVal){
             maxVal=familyIncome;
+        }   System.out.println("Another income?");
+            familyIncome=keyboard.nextDouble();
         }
-        for (int i=0;i<income.size();i++){
-            if (income.get(i)<maxVal*0.10){
+        System.out.println("The highest income is " + maxVal);
+        System.out.println("And the income of families making less than 10 percent of the highest income is ");
+        for (int i=0;i<income.size();i++) {
+            if (income.get(i) < maxVal * 0.10) {
                 System.out.println(income.get(i));
+                count++;
             }
-            count++;
         }
-        System.out.println("would you like to know how many family's income is less than ten percent of the maximum value");
-        String answer = keyboard.nextLine();
-        if (answer.equalsIgnoreCase("yes")){
-            System.out.println("The amount of families making less than 1- percent of the highest income is "+ count);
-        }
+        System.out.println("Which means " + count + " families are making less than "+maxVal*0.10+"!");
+
+
 
     }}
 

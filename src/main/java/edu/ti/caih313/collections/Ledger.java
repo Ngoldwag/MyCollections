@@ -12,7 +12,7 @@ public class Ledger {
         try{
         System.out.println("We wil now test the ledger!");
         System.out.println("The ledger will add the following 6 sales-" +
-                "1.23, 2.34, 3.45, 12.34, 23.45, 123.45");
+                "1.23, 2.34, 3.45, 12.34, 234.5, 123.45");
         Ledger sales = new Ledger();
         sales.addSale(1.23);
         sales.addSale(2.34);
@@ -27,7 +27,7 @@ public class Ledger {
         System.out.println("The total amount of sales made is " + numOfSales);
         System.out.println("The total value of sales made is " + totalVal);
         System.out.println("The average value of the sales is " + averageSales);
-        System.out.println("And the total number of sales that exceeded the maximum value is " + salesAboveMax);
+        System.out.println("And the total number of sales that exceeded the maximum value of $100 is " + salesAboveMax);
     }
         catch(NullPointerException e)
     {

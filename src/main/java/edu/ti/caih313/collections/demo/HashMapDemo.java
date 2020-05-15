@@ -1,4 +1,4 @@
-package edu.ti.caih313.collections;
+package edu.ti.caih313.collections.demo;
 
 import java.util.HashMap;
 import java.util.Map;

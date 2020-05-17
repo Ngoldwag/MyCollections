@@ -3,14 +3,15 @@ package edu.ti.caih313.collections.dataobj;
 public class Person {
     private Name name;
     private Gender gender;
-    private double age;
-    private String emailAddress;
+    private int age;
+    //private String emailAddress;
 
     public enum Gender {MALE, FEMALE}
 
-    public Person(Name name, Gender gender) {
+    public Person(Name name, Gender gender, int age) {
         this.name = name;
         this.gender = gender;
+        this.age=age;
     }
 
     public Name getName() {
@@ -25,21 +26,17 @@ public class Person {
         return gender;
     }
 
-    public double getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(double age) {
-        this.age = age;
-    }
-
-    public String getEmailAddress() {
-        return emailAddress;
-    }
-
-    public void setEmailAddress(String emailAddress) {
-        this.emailAddress = emailAddress;
-    }
+//    public String getEmailAddress() {
+//        return emailAddress;
+//    }
+//
+//    public void setEmailAddress(String emailAddress) {
+//        this.emailAddress = emailAddress;
+//    }
 
     @Override
     public String toString() {
@@ -47,7 +44,6 @@ public class Person {
                 "name=" + name +
                 ", gender=" + gender +
                 ", age=" + age +
-                ", emailAddress='" + emailAddress + '\'' +
                 '}';
     }
 }

@@ -1,8 +1,7 @@
 package edu.ti.caih313.collections.sort;
 
+import edu.ti.caih313.collections.dataobj.EmailAddress;
 import edu.ti.caih313.collections.dataobj.Name;
-import edu.ti.caih313.collections.dataobj.NameByLast;
-import edu.ti.caih313.collections.dataobj.Person;
 import edu.ti.caih313.collections.dataobj.PersonSortable;
 import edu.ti.caih313.collections.demo.PrintGeneric;
 
@@ -17,14 +16,14 @@ import static edu.ti.caih313.collections.dataobj.Person.Gender.MALE;
 public class PersonSortableDemo {
         public static void main(String... args) {
         PersonSortable personArray[] = {
-                new PersonSortable(new Name("James", "Bond"), MALE, 23),
-                new PersonSortable(new Name("Jones", "Truman"),MALE , 33),
-                new PersonSortable(new Name("Donald", "Trump"), MALE, 13),
-                new PersonSortable(new Name("Michelle", "Obama"), FEMALE,26),
-                new PersonSortable(new Name("Tracy", "Cooper"), FEMALE,56),
-                new PersonSortable(new Name("Joe", "Frank"), MALE,32),
-                new PersonSortable(new Name("Jill", "Jackswife"), FEMALE,43),
-                new PersonSortable(new Name("Gilly", "Gillis"), FEMALE,23)
+                new PersonSortable(new Name("James", "Bond"), MALE, 23, new EmailAddress("Homeemail@example.com", "WorkEmail@example.com" , "SchoolEmail@example.com")),
+                new PersonSortable(new Name("Jones", "Truman"),MALE , 33, new EmailAddress("Homeemail@example.com","WorkEmail@example.com" )),
+                new PersonSortable(new Name("Donald", "Trump"), MALE, 13, new EmailAddress("Homeemail@example.com","WorkEmail@example.com" , "SchoolEmail@example.com")),
+                new PersonSortable(new Name("Michelle", "Obama"), FEMALE,26, new EmailAddress("Homeemail@example.com","WorkEmail@example.com" , "SchoolEmail@example.com")),
+                new PersonSortable(new Name("Tracy", "Cooper"), FEMALE,56, new EmailAddress("Homeemail@example.com")),
+                new PersonSortable(new Name("Joe", "Frank"), MALE,32, new EmailAddress("Homeemail@example.com","WorkEmail@example.com" , "SchoolEmail@example.com")),
+                new PersonSortable(new Name("Jill", "Jackswife"), FEMALE,43, new EmailAddress("Homeemail@example.com","WorkEmail@example.com" )),
+                new PersonSortable(new Name("Gilly", "Gillis"), FEMALE,23, new EmailAddress("Homeemail@example.com","WorkEmail@example.com" , "SchoolEmail@example.com"))
         };
 
         List<PersonSortable> personList = Arrays.asList(personArray);

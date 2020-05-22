@@ -4,14 +4,19 @@ public class Person {
     private Name name;
     private Gender gender;
     private int age;
-    //private String emailAddress;
+    private EmailAddress emailAddress;
+
+    public String getLastName() {
+        return name.getLastName();
+    }
 
     public enum Gender {MALE, FEMALE}
 
-    public Person(Name name, Gender gender, int age) {
+    public Person(Name name, Gender gender, int age, EmailAddress email) {
         this.name = name;
         this.gender = gender;
         this.age=age;
+        this.emailAddress = email;
     }
 
     public Name getName() {
@@ -30,13 +35,13 @@ public class Person {
         return age;
     }
 
-//    public String getEmailAddress() {
-//        return emailAddress;
-//    }
-//
-//    public void setEmailAddress(String emailAddress) {
-//        this.emailAddress = emailAddress;
-//    }
+    public EmailAddress getEmailAddress() {
+        return emailAddress;
+    }
+
+    public void setEmailAddress(EmailAddress emailAddress) {
+        this.emailAddress = emailAddress;
+    }
 
     @Override
     public String toString() {
@@ -44,6 +49,8 @@ public class Person {
                 "name=" + name +
                 ", gender=" + gender +
                 ", age=" + age +
+                ", email=" + emailAddress +
                 '}';
     }
+
 }

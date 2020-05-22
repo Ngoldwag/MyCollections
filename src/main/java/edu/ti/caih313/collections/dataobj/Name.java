@@ -3,8 +3,8 @@ package edu.ti.caih313.collections.dataobj;
 import java.util.Objects;
 
 public class Name {
-    private final String firstName;
-    private final String lastName;
+    private  String firstName;
+    private  String lastName;
 
     public Name(String firstName, String lastName) {
         if (firstName == null || lastName == null) {

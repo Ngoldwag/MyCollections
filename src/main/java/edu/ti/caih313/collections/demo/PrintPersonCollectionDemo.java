@@ -6,15 +6,16 @@ import edu.ti.caih313.collections.dataobj.Person;
 
 import java.util.*;
 
+import static edu.ti.caih313.collections.dataobj.EmailAddress.EmailType.*;
 import static edu.ti.caih313.collections.dataobj.Person.Gender.*;
 
 public class PrintPersonCollectionDemo {
 
     public static void main(String[] args) {
-        Person bob = new Person(new Name("Bob", "Smith"), MALE,23, new EmailAddress("blabla@gmail.com"));
-        Person jane = new Person(new Name("Jane", "Doe"), FEMALE,34,new EmailAddress("blabla@gmail.com", "workbla@gmail.com"));
-        Person ironMan = new Person(new Name("Tony", "Stark"), MALE,34,new EmailAddress("blabla@gmail.com", "workbla@gmail.com", "schoolbla@blabla.com"));
-        Person boPeep = new Person(new Name("Bo", "Peep"), FEMALE,12,new EmailAddress("blabla@gmail.com", "workbla@gmail.com"));
+        Person bob = new Person(new Name("Bob", "Smith"), MALE,23);
+        Person jane = new Person(new Name("Jane", "Doe"), FEMALE,34);
+        Person ironMan = new Person(new Name("Tony", "Stark"), MALE,34);
+        Person boPeep = new Person(new Name("Bo", "Peep"), FEMALE,12);
 
         List<Person> personList = new ArrayList<>();
         personList.add(bob);

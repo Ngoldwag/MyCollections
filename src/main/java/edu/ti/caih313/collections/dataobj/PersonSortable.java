@@ -2,7 +2,7 @@ package edu.ti.caih313.collections.dataobj;
 
 public class PersonSortable extends Person implements Comparable<PersonSortable> {
     public PersonSortable(Name name, Gender gender, int age, EmailAddress email) {
-        super(name, gender, age, email);
+        super(name, gender, age);
     }
 
     @Override

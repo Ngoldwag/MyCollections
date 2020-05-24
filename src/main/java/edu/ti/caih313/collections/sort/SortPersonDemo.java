@@ -3,6 +3,7 @@ package edu.ti.caih313.collections.sort;
 import edu.ti.caih313.collections.dataobj.EmailAddress;
 import edu.ti.caih313.collections.dataobj.Name;
 import edu.ti.caih313.collections.dataobj.Person;
+import edu.ti.caih313.collections.dataobj.PersonSortable;
 import edu.ti.caih313.collections.demo.PrintGeneric;
 
 import java.util.Arrays;
@@ -10,20 +11,22 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import static edu.ti.caih313.collections.dataobj.EmailAddress.EmailType.*;
+import static edu.ti.caih313.collections.dataobj.EmailAddress.EmailType.HOME;
 import static edu.ti.caih313.collections.dataobj.Person.Gender.FEMALE;
 import static edu.ti.caih313.collections.dataobj.Person.Gender.MALE;
 
 public class SortPersonDemo {
     public static void main(String... args) {
         Person personArray[] = {
-                new Person(new Name("John", "Smith"), MALE, 42, new EmailAddress("Homeemail@example.com", "workemail@exxample.com", "schoolemail@example.com")),
-                new Person(new Name("Karl", "Ng"), MALE, 73,new EmailAddress("Homeemail@example.com", "workemail@exxample.com", "schoolemail@example.com")),
-                new Person(new Name("Jeff", "Smith"), MALE, 21,new EmailAddress("Homeemail@example.com", "workemail@exxample.com", "schoolemail@example.com")),
-                new Person(new Name("Tom", "Rich"), MALE, 18,new EmailAddress("Homeemail@example.com", "workemail@exxample.com", "schoolemail@example.com")),
-                new Person(new Name("Bob", "Smith"), MALE, 13,new EmailAddress("Homeemail@example.com", "workemail@exxample.com", "schoolemail@example.com")),
-                new Person(new Name("Jane", "Doe"), FEMALE, 27,new EmailAddress("Homeemail@example.com", "workemail@exxample.com", "schoolemail@example.com")),
-                new Person(new Name("Tony", "Stark"), MALE, 52,new EmailAddress("Homeemail@example.com", "workemail@exxample.com", "schoolemail@example.com")),
-                new Person(new Name("Bo", "Peep"), FEMALE, 205,new EmailAddress("Homeemail@example.com", "workemail@exxample.com", "schoolemail@example.com"))
+                new Person(new Name("James", "Bond"), MALE, 23),
+                new Person(new Name("Jones", "Truman"),MALE , 33),
+                new Person(new Name("Donald", "Trump"), MALE, 13),
+                new Person(new Name("Michelle", "Obama"), FEMALE,26),
+                new Person(new Name("Tracy", "Cooper"), FEMALE,56),
+                new Person(new Name("Joe", "Frank"), MALE,32),
+                new Person(new Name("Jill", "Jackswife"), FEMALE,43),
+                new Person(new Name("Gilly", "Gillis"), FEMALE,23),
         };
 
 

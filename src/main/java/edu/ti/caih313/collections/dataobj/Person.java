@@ -1,24 +1,33 @@
 package edu.ti.caih313.collections.dataobj;
 
+import java.util.HashMap;
+
 public class Person {
-    private Name name;
-    private Gender gender;
-    private int age;
-    private EmailAddress emailAddress;
+    public Name name;
+    public Gender gender;
+    public int age;
+    public EmailAddress emailAddress;
+
+    public enum Gender {MALE, FEMALE}
+
+    public Person(Name name, Gender gender, int age) {
+        this.name = name;
+        this.gender = gender;
+        this.age=age;
+        emailAddress = new EmailAddress();
+        emailAddress.emailMap = new HashMap<EmailAddress.EmailType, String>();
+    }
 
     public String getLastName() {
         return name.getLastName();
     }
 
-    public enum Gender {MALE, FEMALE}
+    public void EmailAddress(EmailAddress.EmailType emailType, String string ){
+        emailAddress.emailMap.put(emailType, string); }
 
-    public Person(Name name, Gender gender, int age, EmailAddress email) {
-        this.name = name;
-        this.gender = gender;
-        this.age=age;
-        this.emailAddress = email;
-    }
-
+   public HashMap<EmailAddress.EmailType, String> getEmailMap(){
+        return emailAddress.emailMap;
+   }
     public Name getName() {
         return name;
     }
@@ -35,13 +44,9 @@ public class Person {
         return age;
     }
 
-    public EmailAddress getEmailAddress() {
-        return emailAddress;
-    }
 
-    public void setEmailAddress(EmailAddress emailAddress) {
-        this.emailAddress = emailAddress;
-    }
+
+
 
     @Override
     public String toString() {
@@ -49,7 +54,7 @@ public class Person {
                 "name=" + name +
                 ", gender=" + gender +
                 ", age=" + age +
-                ", email=" + emailAddress +
+                ", email=" + emailAddress.emailMap +
                 '}';
     }
 

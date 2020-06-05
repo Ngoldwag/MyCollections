@@ -10,7 +10,6 @@ public class Person {
     public Gender gender;
     public int age;
     private LocalDate birthDate;
-    private String formattedBday;
     public EmailAddress emailAddress;
 
     public enum Gender {MALE, FEMALE}
@@ -33,10 +32,6 @@ public class Person {
    public HashMap<EmailAddress.EmailType, String> getEmailMap(){
         return emailAddress.emailMap;
    }
-    //public  String getEmailMapAsString(){
-//        return emailAddress.emailMap.toString();
-//    }
-
 
     public Name getName() {
         return name;
@@ -54,16 +49,13 @@ public class Person {
         Period ageNow = Period.between(birthDate, LocalDate.now());
         return ageNow.getYears();
     }
-    public void makeFormattedBday() {
+    public String getFormattedBday() {
         DateTimeFormatter format = DateTimeFormatter.ofPattern("MMM d yyyy");
         String formattedBday1 = birthDate.format(format);
         String[] temporary = formattedBday1.split(" ");
-        formattedBday = temporary[0] + " " + temporary[1] + ", " + temporary[2] + " CE";
+        return temporary[0] + " " + temporary[1] + ", " + temporary[2] + " CE";
     }
-    public String getFormattedBday(){
-        makeFormattedBday();
-        return formattedBday;
-    }
+
 
     @Override
     public String toString(){

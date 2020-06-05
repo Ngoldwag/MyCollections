@@ -24,7 +24,7 @@ public class EmailAddressTest {
     public void getEmailAddressWhenThereIsOne() {
         Person michelleObama = new Person(new Name("Michelle", "Obama"), FEMALE, LocalDate.of(2003, Month.MAY, 13));
         michelleObama.EmailAddress(HOME, "michelle.obama@theWhiteHouse");
-        assertEquals("<HOME:michelle.obama@theWhiteHouse",michelleObama.emailAddress.toString());
+        assertEquals("<HOME:michelle.obama@theWhiteHouse>",michelleObama.emailAddress.toString());
     }
 
     @Test

@@ -1,8 +1,10 @@
 package edu.ti.caih313.collections.dataobj;
 
+import java.time.LocalDate;
+
 public class PersonSortable extends Person implements Comparable<PersonSortable> {
-    public PersonSortable(Name name, Gender gender, int age, EmailAddress email) {
-        super(name, gender, age);
+    public PersonSortable(Name name, Gender gender, LocalDate birthDate, EmailAddress email) {
+        super(name, gender, birthDate);
     }
 
     @Override

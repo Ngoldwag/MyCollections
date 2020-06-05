@@ -17,25 +17,19 @@ public class EmailAddressTest {
         michelleObama.EmailAddress(HOME, "michelle.obama@theWhiteHouse");
         michelleObama.EmailAddress(WORK, "michelle.obama@workWorkWork");
         michelleObama.EmailAddress(SCHOOL, "michelle.obama@ti.htc.edu");
-        System.out.println(michelleObama.getName());
-        System.out.println(michelleObama.emailAddress.toString())
-        ;assertNull(null);
+        assertEquals("<HOME:michelle.obama@theWhiteHouse, WORK:michelle.obama@workWorkWork, SCHOOL:michelle.obama@ti.htc.edu>",michelleObama.emailAddress.toString());
     }
 
     @Test
     public void getEmailAddressWhenThereIsOne() {
         Person michelleObama = new Person(new Name("Michelle", "Obama"), FEMALE, LocalDate.of(2003, Month.MAY, 13));
         michelleObama.EmailAddress(HOME, "michelle.obama@theWhiteHouse");
-        System.out.println(michelleObama.getName());
-        System.out.println(michelleObama.emailAddress.toString());
-        assertNull(null);
+        assertEquals("<HOME:michelle.obama@theWhiteHouse",michelleObama.emailAddress.toString());
     }
 
     @Test
     public void testGetEmailAddressWhenThereAreNone() {
         Person michelleObama = new Person(new Name("Michelle", "Obama"), FEMALE, LocalDate.of(2003, Month.MAY, 13));
-        System.out.println(michelleObama.getName());
-        System.out.println(michelleObama.emailAddress.toString());
-        assertNull(null);
+        assertEquals("<no email address available>",michelleObama.emailAddress.toString());
     }
 }

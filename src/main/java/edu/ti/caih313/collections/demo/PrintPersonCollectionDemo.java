@@ -1,21 +1,22 @@
 package edu.ti.caih313.collections.demo;
 
-import edu.ti.caih313.collections.dataobj.EmailAddress;
 import edu.ti.caih313.collections.dataobj.Name;
 import edu.ti.caih313.collections.dataobj.Person;
 
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.*;
 
-import static edu.ti.caih313.collections.dataobj.EmailAddress.EmailType.*;
-import static edu.ti.caih313.collections.dataobj.Person.Gender.*;
+import static edu.ti.caih313.collections.dataobj.Person.Gender.FEMALE;
+import static edu.ti.caih313.collections.dataobj.Person.Gender.MALE;
 
 public class PrintPersonCollectionDemo {
 
     public static void main(String[] args) {
-        Person bob = new Person(new Name("Bob", "Smith"), MALE,23);
-        Person jane = new Person(new Name("Jane", "Doe"), FEMALE,34);
-        Person ironMan = new Person(new Name("Tony", "Stark"), MALE,34);
-        Person boPeep = new Person(new Name("Bo", "Peep"), FEMALE,12);
+        Person bob = new Person(new Name("Bob", "Smith"), MALE, LocalDate.of(2003, Month.MAY, 13));
+        Person jane = new Person(new Name("Jane", "Doe"), FEMALE,LocalDate.of(2003, Month.MAY, 13));
+        Person ironMan = new Person(new Name("Tony", "Stark"), MALE,LocalDate.of(2003, Month.MAY, 13));
+        Person boPeep = new Person(new Name("Bo", "Peep"), FEMALE,LocalDate.of(2003, Month.MAY, 13));
 
         List<Person> personList = new ArrayList<>();
         personList.add(bob);

@@ -1,32 +1,30 @@
 package edu.ti.caih313.collections.sort;
 
-import edu.ti.caih313.collections.dataobj.EmailAddress;
 import edu.ti.caih313.collections.dataobj.Name;
 import edu.ti.caih313.collections.dataobj.Person;
-import edu.ti.caih313.collections.dataobj.PersonSortable;
 import edu.ti.caih313.collections.demo.PrintGeneric;
 
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import static edu.ti.caih313.collections.dataobj.EmailAddress.EmailType.*;
-import static edu.ti.caih313.collections.dataobj.EmailAddress.EmailType.HOME;
 import static edu.ti.caih313.collections.dataobj.Person.Gender.FEMALE;
 import static edu.ti.caih313.collections.dataobj.Person.Gender.MALE;
 
 public class SortPersonDemo {
     public static void main(String... args) {
         Person personArray[] = {
-                new Person(new Name("James", "Bond"), MALE, 23),
-                new Person(new Name("Jones", "Truman"),MALE , 33),
-                new Person(new Name("Donald", "Trump"), MALE, 13),
-                new Person(new Name("Michelle", "Obama"), FEMALE,26),
-                new Person(new Name("Tracy", "Cooper"), FEMALE,56),
-                new Person(new Name("Joe", "Frank"), MALE,32),
-                new Person(new Name("Jill", "Jackswife"), FEMALE,43),
-                new Person(new Name("Gilly", "Gillis"), FEMALE,23),
+                new Person(new Name("James", "Bond"), MALE, LocalDate.of(1978, Month.MARCH, 15)),
+                new Person(new Name("Jones", "Truman"),MALE , LocalDate.of(1988, Month.MAY, 15)),
+                new Person(new Name("Donald", "Trump"), MALE, LocalDate.of(1878, Month.OCTOBER, 15)),
+                new Person(new Name("Michelle", "Obama"), FEMALE,LocalDate.of(1978, Month.NOVEMBER, 15)),
+                new Person(new Name("Tracy", "Cooper"), FEMALE,LocalDate.of(1973, Month.MARCH, 15)),
+                new Person(new Name("Joe", "Frank"), MALE,LocalDate.of(1948, Month.FEBRUARY, 15)),
+                new Person(new Name("Jill", "Jackswife"), FEMALE,LocalDate.of(1976, Month.DECEMBER, 15)),
+                new Person(new Name("Gilly", "Gillis"), FEMALE,LocalDate.of(1993, Month.SEPTEMBER, 15)),
         };
 
 

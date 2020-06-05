@@ -10,6 +10,7 @@ public class Person {
     public Gender gender;
     public int age;
     private LocalDate birthDate;
+    private String formattedBday;
     public EmailAddress emailAddress;
 
     public enum Gender {MALE, FEMALE}
@@ -53,10 +54,12 @@ public class Person {
         Period ageNow = Period.between(birthDate, LocalDate.now());
         return ageNow.getYears();
     }
-
-    DateTimeFormatter format = DateTimeFormatter.ofPattern("MMM d yyyy  hh:mm a");
-
-
+    public void getFormattedBday() {
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("MMM d yyyy  hh:mm a");
+        String formattedBday = birthDate.format(format);
+        String[] temporary = formattedBday.split(" ");
+        formattedBday= temporary[0] + " " + temporary[1] + ", " +temporary[2] + "CE";
+    }
 
     @Override
     public String toString() {
@@ -64,7 +67,7 @@ public class Person {
                 "name=" + name + "\n"+
                 "gender=" + gender + "\n"+
                 "age=" + age +"\n"+
-                ", birthDate=" + birthDate+
+                ", birthDate=" + birthDate+ "\n"+
                 "email=" + emailAddress.toString() + "\n"+
                 '}';
     }

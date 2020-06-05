@@ -54,20 +54,24 @@ public class Person {
         Period ageNow = Period.between(birthDate, LocalDate.now());
         return ageNow.getYears();
     }
-    public void getFormattedBday() {
-        DateTimeFormatter format = DateTimeFormatter.ofPattern("MMM d yyyy  hh:mm a");
-        String formattedBday = birthDate.format(format);
-        String[] temporary = formattedBday.split(" ");
-        formattedBday= temporary[0] + " " + temporary[1] + ", " +temporary[2] + "CE";
+    public void makeFormattedBday() {
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("MMM d yyyy");
+        String formattedBday1 = birthDate.format(format);
+        String[] temporary = formattedBday1.split(" ");
+        formattedBday = temporary[0] + " " + temporary[1] + ", " + temporary[2] + " CE";
+    }
+    public String getFormattedBday(){
+        makeFormattedBday();
+        return formattedBday;
     }
 
     @Override
-    public String toString() {
-        return "Person{" +"\n"+
+    public String toString(){
+    return "Person{" +"\n"+
                 "name=" + name + "\n"+
                 "gender=" + gender + "\n"+
                 "age=" + age +"\n"+
-                ", birthDate=" + birthDate+ "\n"+
+                ", birthDate=" + getFormattedBday()+ "\n"+
                 "email=" + emailAddress.toString() + "\n"+
                 '}';
     }

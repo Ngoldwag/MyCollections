@@ -18,7 +18,7 @@ public class PersonTest {
         Person michelleObama = new Person(new Name("Michelle", "Obama"), FEMALE, LocalDate.of(2003, Month.MAY, 13));
         michelleObama.EmailAddress(HOME, "michelle.obama@theWhiteHouse");
         assertEquals("Person{" +"\n"+
-                "name=Obama, Michelle\ngender=FEMALE\nage=0\n, birthDate=2003-05-13\nemail=<HOME:michelle.obama@theWhiteHouse>\n}"
+                "name=Obama, Michelle\ngender=FEMALE\nage=0\n, birthDate=May 13, 2003 CE\nemail=<HOME:michelle.obama@theWhiteHouse>\n}"
         ,michelleObama.toString());
 
     }
@@ -32,7 +32,9 @@ public class PersonTest {
     @Test
     public void testToGetFormattedBirthday() {
         Person michelleObama = new Person(new Name("Michelle", "Obama"), FEMALE, LocalDate.of(2003, Month.MAY, 13));
-        michelleObama.getFormattedBday();
+        String michellesBday = michelleObama.getFormattedBday();
+        assertEquals("May 13, 2003 CE",michellesBday );
+
     }
 
 }
